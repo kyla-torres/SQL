@@ -1,0 +1,33 @@
+-- Create a clothing store database
+CREATE TABLE ClothingStore
+(id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, sizes TEXT);
+
+INSERT INTO
+ClothingStore
+VALUES 
+(1,"TShirt", 25, 30, "S, M,  L");
+(2,"Skirt", 45, 20, "M, L");
+(3, "Dress", 30, 15, "XS, S, M");
+(4, "Jeans", 75, 32, "XS, S, M, L, XL");
+(5, "Tank Top", 20, 10, "S, M");
+(6, "Sweatshirt", 60, 25, "M, L, XL");
+(7, "PJs", 45, 20, "S, M, L");
+(8, "Denim Shorts", 55, 13, "M, L, XL");
+(9, "Socks", 10, 45, "S, M");
+(10, "Leggings", 55, 36, "S, M, L");
+(11, "Sports Bra", 32, 40, "XS, M, L");
+(12, "Slippers", 25, 6, "S , L");
+(13, "Sweater Vest", 40, 15, "S, M, L");
+(14, "Blouse", 22, 27, "S, M, XL");
+(15, "Romper", 36, 50, "XS, S, XL");
+
+-- Display the database where stock is more than 20 and order by price
+SELECT * 
+FROM ClothingStore
+WHERE quantity > 20
+ORDER BY price;
+
+-- What is the avg price of items with stock more than 20 
+SELECT AVG(price) "Average Price"
+FROM ClothingStore
+WHERE quantity > 20;
